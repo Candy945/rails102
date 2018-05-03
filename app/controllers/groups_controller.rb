@@ -8,15 +8,15 @@ class GroupsController < ApplicationController
   end
 
   def create
-    @group = Group.create
+    @group = Group.new(group_params)
+    @group.save
+      redirect_to groups_path
   end
 
-  def edit
-    @group = Group.edit
-  end
-
-  def delete
-    @group = Group.delete
-  end
+  private
+  
+    def group_params
+      params.require(:group).permit(:title, :description)
+    end
 
 end
