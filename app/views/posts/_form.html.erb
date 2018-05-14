@@ -1,0 +1,10 @@
+
+  <%= simple_form_for [@group,@post] do |f| %>
+    <div class="form-group">
+      <%= f.input :content, input_html: {class:"form-control"} %>
+    </div>
+    <div class="form-actions">
+      <%= f.submit "Sumbit",disable_with:"Submitting...", class:"btn btn-primary" %>
+    </div>
+
+  <% end %>
